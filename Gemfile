@@ -32,3 +32,8 @@ gem "delayed_job_admin"
 group :development, :test do
 
 end
+
+group :eycloud do
+  gem "chef"
+  gem "eycloud-recipe-delayed_job"
+end
