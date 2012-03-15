@@ -8,4 +8,10 @@ class Task < ActiveRecord::Base
     self.done = false
     self.save
   end
+  
+  def self.random_task!(list_id)
+    if list = List.find_by_id(list_id)
+      list.tasks.create(:name => Faker::Company.catch_phrase)
+    end
+  end
 end

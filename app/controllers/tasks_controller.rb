@@ -31,8 +31,8 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.update_attributes(params[:task])
-        # Delayed::Job.enqueue UncheckTask.new(@task.id)
-        @task.delay.uncheck!
+        Task.delay.random_task!(@task.list_id) if @task.done?
+        # Resque.enqueue(AddNewTask, @task.list_id)
 
         format.html { redirect_to( list_tasks_url(@list), :notice => 'Task was successfully updated.') }
       else

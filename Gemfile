@@ -22,6 +22,7 @@ platforms :jruby do
   gem 'thor'
 end
 
+gem "faker"
 gem 'delayed_job_active_record'
 gem "delayed_job_admin"
 
