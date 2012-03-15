@@ -33,8 +33,6 @@ group :development, :test do
 
 end
 
-group :eycloud do
-  gem "chef"
-  gem "yajl-ruby"
-  gem "eycloud-recipe-delayed_job"
-end
+gem "chef", :group => :eycloud
+gem "yajl-ruby", :group => :eycloud
+gem "eycloud-recipe-delayed_job", :group => :eycloud
