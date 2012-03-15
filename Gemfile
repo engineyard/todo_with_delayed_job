@@ -35,5 +35,6 @@ end
 
 group :eycloud do
   gem "chef"
+  gem "json"
   gem "eycloud-recipe-delayed_job"
 end
