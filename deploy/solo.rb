@@ -12,11 +12,14 @@ node_name         node["engineyard"]["this"]
 require "fileutils"
 $LOAD_PATH.each do |path|
   recipe_path = path.gsub(%r{/lib$},'')
-  if metadata_path = File.exist?(File.join(recipe_path, 'metadata.json'))
-    p metadata_path
+  if File.exist?(metadata_path = File.join(recipe_path, 'metadata.json'))
     metadata = Yajl::Parser.new.parse(File.new(metadata_path, "r"))
-    p metadata
-    puts "Unpacking #{metadata["name"]} recipe into cookbooks from #{cookbooks_path}"
-    FileUtils.cp_r(recipe_path, File.join(cookbooks_path, metadata["name"]))
+    if metadata["name"]
+      puts "Unpacking #{metadata["name"]} recipe into cookbooks from #{cookbooks_path}"
+      FileUtils.cp_r(recipe_path, File.join(cookbooks_path, metadata["name"]))
+    else
+      puts "ERROR: Recipe has no 'name' in metadata.json (#{cookbooks_path})"
+    end
   end
 end
+
