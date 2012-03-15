@@ -29,6 +29,9 @@ GEM
       activemodel (= 3.0.9)
       activesupport (= 3.0.9)
     activesupport (3.0.9)
+    airbrake (3.0.9)
+      activesupport
+      builder
     arel (2.0.10)
     bouncy-castle-java (1.5.0146.1)
     builder (2.1.2)
@@ -40,6 +43,7 @@ GEM
     delayed_job_admin (1.0.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    ey_config (0.0.2)
     faker (1.0.1)
       i18n (~> 0.4)
     i18n (0.5.0)
@@ -108,8 +112,10 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-jdbc-adapter
+  airbrake
   delayed_job_active_record
   delayed_job_admin
+  ey_config
   faker
   jdbc-mysql
   jdbc-postgres

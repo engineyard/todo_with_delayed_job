@@ -40,3 +40,7 @@ module Listr
     config.filter_parameters += [:password]
   end
 end
+
+Airbrake.configure do |config|
+  config.api_key = EY::Config.get(:airbrake, 'AIRBRAKE_API_KEY' )
+end

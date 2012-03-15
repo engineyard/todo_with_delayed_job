@@ -32,3 +32,6 @@ gem "delayed_job_admin"
 group :development, :test do
 
 end
+
+gem 'airbrake'
+gem 'ey_config'
