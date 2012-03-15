@@ -8,5 +8,7 @@ File.open("/etc/chef-custom/dna.json", 'w') do |f|
   f.chmod(0600)
 end
 
+
+
 # Runs application cookbooks
 run "cd #{latest_release}; sudo bundle exec chef-solo -c #{latest_release}/deploy/solo.rb -j /etc/chef-custom/dna.json"
