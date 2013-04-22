@@ -14,4 +14,4 @@ bundle exec ruby -Itest test/functional/lists_controller_test.rb --name test_sho
 
 # Delayed Job branch
 
-This branch includes delayed_job - the Rails gem and the EY Cloud recipes. It automatically installs all required EY Cloud changes during deploy. See `deploy/before_migrate.rb` and `deploy/cookbooks/delayed_job/recipes/`
+This branch includes delayed_job - the Rails gem and the EY Cloud recipes. You have to run `ey recipes upload` and `ey recipes apply` on the root directory on your local machine. You can read more details about custom chef recipes at https://support.cloud.engineyard.com/entries/21009867-custom-chef-recipes
